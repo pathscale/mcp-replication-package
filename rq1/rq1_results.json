@@ -1,0 +1,163 @@
+{
+  "api.support.cafe": {
+    "clippy": {
+      "errors": 0,
+      "warnings": 10,
+      "top_lints": {
+        "clippy::collapsible_if": 2,
+        "clippy::useless_conversion": 2,
+        "clippy::needless_question_mark": 2,
+        "clippy::for_kv_map": 2,
+        "clippy::clone_on_copy": 2
+      }
+    },
+    "cargo_audit": {
+      "vulnerability_count": 6,
+      "advisory_ids": [
+        "RUSTSEC-2026-0185",
+        "RUSTSEC-2026-0194",
+        "RUSTSEC-2026-0195",
+        "RUSTSEC-2026-0204"
+      ],
+      "warning_counts_by_kind": {
+        "unmaintained": 2,
+        "unsound": 1
+      }
+    },
+    "loc": "7278"
+  },
+  "api.honey.id-backend": {
+    "clippy": {
+      "errors": 0,
+      "warnings": 52,
+      "top_lints": {
+        "clippy::empty_docs": 48,
+        "clippy::redundant_static_lifetimes": 2,
+        "clippy::too_many_arguments": 2
+      }
+    },
+    "cargo_audit": {
+      "vulnerability_count": 6,
+      "advisory_ids": [
+        "RUSTSEC-2026-0185",
+        "RUSTSEC-2026-0194",
+        "RUSTSEC-2026-0195",
+        "RUSTSEC-2026-0204"
+      ],
+      "warning_counts_by_kind": {
+        "unmaintained": 2,
+        "unsound": 1
+      }
+    },
+    "loc": "9194"
+  },
+  "auth.honey.id-backend": {
+    "clippy": {
+      "errors": 0,
+      "warnings": 1,
+      "top_lints": {
+        "dead_code": 1
+      }
+    },
+    "cargo_audit": {
+      "vulnerability_count": 6,
+      "advisory_ids": [
+        "RUSTSEC-2026-0185",
+        "RUSTSEC-2026-0194",
+        "RUSTSEC-2026-0195",
+        "RUSTSEC-2026-0204"
+      ],
+      "warning_counts_by_kind": {
+        "unmaintained": 2,
+        "unsound": 1,
+        "yanked": 2
+      }
+    },
+    "loc": "11468"
+  },
+  "nofilter.io-backend": {
+    "clippy": {
+      "errors": 0,
+      "warnings": 0,
+      "top_lints": {}
+    },
+    "cargo_audit": {
+      "vulnerability_count": 6,
+      "advisory_ids": [
+        "RUSTSEC-2026-0185",
+        "RUSTSEC-2026-0194",
+        "RUSTSEC-2026-0195",
+        "RUSTSEC-2026-0204"
+      ],
+      "warning_counts_by_kind": {
+        "unmaintained": 3,
+        "unsound": 1
+      }
+    },
+    "loc": "18047"
+  },
+  "pays.online-backend": {
+    "clippy": {
+      "errors": 0,
+      "warnings": 825,
+      "top_lints": {
+        "clippy::expect_used": 143,
+        "clippy::unreadable_literal": 86,
+        "clippy::or_fun_call": 62,
+        "clippy::derive_partial_eq_without_eq": 59,
+        "clippy::unwrap_used": 49,
+        "clippy::needless_continue": 48,
+        "clippy::use_self": 46,
+        "clippy::cast_possible_truncation": 30,
+        "clippy::cast_sign_loss": 26,
+        "clippy::needless_pass_by_value": 26
+      }
+    },
+    "cargo_audit": {
+      "vulnerability_count": 0,
+      "advisory_ids": [],
+      "warning_counts_by_kind": {
+        "unmaintained": 3
+      }
+    },
+    "loc": "14626"
+  },
+  "web3.trading-backend": {
+    "clippy": {
+      "errors": 0,
+      "warnings": 60,
+      "top_lints": {
+        "clippy::redundant_field_names": 12,
+        "clippy::useless_conversion": 12,
+        "clippy::too_many_arguments": 6,
+        "dead_code": 4,
+        "clippy::unnecessary_sort_by": 4,
+        "clippy::await_holding_lock": 4,
+        "clippy::for_kv_map": 4,
+        "unused_imports": 2,
+        "unreachable_patterns": 2,
+        "unused_variables": 2
+      }
+    },
+    "cargo_audit": {
+      "vulnerability_count": 13,
+      "advisory_ids": [
+        "RUSTSEC-2025-0009",
+        "RUSTSEC-2026-0037",
+        "RUSTSEC-2026-0044",
+        "RUSTSEC-2026-0048",
+        "RUSTSEC-2026-0049",
+        "RUSTSEC-2026-0098",
+        "RUSTSEC-2026-0099",
+        "RUSTSEC-2026-0104",
+        "RUSTSEC-2026-0185",
+        "RUSTSEC-2026-0204"
+      ],
+      "warning_counts_by_kind": {
+        "unmaintained": 7,
+        "unsound": 5
+      }
+    },
+    "loc": "55338"
+  }
+}

@@ -1,0 +1,15 @@
+================================================================================
+FILTERED OPERATIONS LOG
+================================================================================
+
+Total operations analyzed: 26
+Operations filtered: 0
+Operations allowed: 26
+
+Filter criteria — structural: HTTP DELETE, deprecated. Semantic (LLM): authentication, authorization, settings.
+
+================================================================================
+FILTERED OPERATIONS:
+================================================================================
+
+No operations were filtered.

@@ -1,0 +1,4 @@
+phase	start_utc	end_utc	seconds	exit
+regenerate	2026-07-19T21:35:45Z	2026-07-19T21:35:45Z	0	0
+clippy	2026-07-19T21:35:45Z	2026-07-19T21:35:53Z	8	0
+rq1_instruments	2026-07-19T21:35:53Z	2026-07-19T21:35:56Z	3	0/1

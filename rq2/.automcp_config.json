@@ -1,0 +1,14 @@
+{
+  "input": "$CODE/api.support.cafe/docs/openapi.yaml",
+  "output": "$CODE/api.support.cafe/rq2_out",
+  "auth": null,
+  "include_tags": null,
+  "exclude_tags": null,
+  "include": [
+    "destructive",
+    "deprecated"
+  ],
+  "disable_id_merge": false,
+  "generated_at": "2026-07-20T05:06:51.012224",
+  "version": "1.0"
+}

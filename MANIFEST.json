@@ -1,0 +1,49 @@
+{
+  "description": "Pinned service-repo states used for all RQ1/RQ2 measurements",
+  "cleared_full_json": [
+    "api.support.cafe"
+  ],
+  "repos": {
+    "api.support.cafe": {
+      "branch": "mcp-support",
+      "sha": "88ef163",
+      "pr": "https://github.com/pathscale/api.support.cafe/pull/3",
+      "url": "https://github.com/pathscale/api.support.cafe"
+    },
+    "api.honey.id-backend": {
+      "branch": "mcp-support",
+      "sha": "20e06fc",
+      "pr": "https://github.com/pathscale/api.honey.id-backend/pull/23",
+      "url": "https://github.com/pathscale/api.honey.id-backend"
+    },
+    "auth.honey.id-backend": {
+      "branch": "bump-endpoint-libs-1.9",
+      "sha": "798591e",
+      "pr": "https://github.com/pathscale/auth.honey.id-backend/pull/36",
+      "url": "https://github.com/pathscale/auth.honey.id-backend"
+    },
+    "nofilter.io-backend": {
+      "branch": "bump-endpoint-libs-1.9",
+      "sha": "c4efa1e",
+      "pr": "https://github.com/pathscale/nofilter.io-backend/pull/146",
+      "url": "https://github.com/pathscale/nofilter.io-backend"
+    },
+    "pays.online-backend": {
+      "branch": "bump-endpoint-libs-1.9",
+      "sha": "aa83b36",
+      "pr": "https://github.com/pathscale/pays.online-backend/pull/137",
+      "url": "https://github.com/pathscale/pays.online-backend"
+    },
+    "web3.trading-backend": {
+      "branch": "mcp-support",
+      "sha": "525d3d16",
+      "pr": "https://github.com/pathscale/web3.trading-backend/pull/118",
+      "url": "https://github.com/pathscale/web3.trading-backend"
+    }
+  },
+  "instrumentation": {
+    "mcp_verify.sh": "committed in api.support.cafe (mcp-support branch)",
+    "rq1_scan.sh": "committed in api.support.cafe (mcp-support branch)",
+    "generator": "https://github.com/Meriem-611/Auto-MCP (see rq2/run.log for exact invocation and skipped stages)"
+  }
+}

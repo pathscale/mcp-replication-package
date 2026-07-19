@@ -1,0 +1,41 @@
+[wrapper] Azure-OpenAI risky-operation semantic filtering DISABLED (use_llm=False; no API keys available). Structural DELETE/deprecated filtering disabled via --include destructive --include deprecated.
+[INFO] Parsing and dereferencing spec: $CODE/api.support.cafe/docs/openapi.yaml
+[parser] Loading spec file: $CODE/api.support.cafe/docs/openapi.yaml
+[parser] Loaded spec in 0.03s
+[parser] Resolving $ref references...
+[resolve_references] Total $ref resolved: 4, max recursion depth: 13
+[parser] Resolved references in 0.00s
+[parser] Cleaning and sanitizing spec...
+[parser] Fixed path params in 0.00s
+[parser] Fixed duplicate operation IDs in 0.00s
+[parser] Cleaned default values in 0.00s (processed 1158 objects)
+[parser] Cleaned spec in 0.00s
+[parser] Validating spec...
+[parser] Validated spec in 0.00s
+[INFO] Done parsing and dereferencing in 0.03s
+DEBUG: Type after parse_and_dereference: <class 'dict'>
+DEBUG: Extracted auth_methods: {'honeyIdAuth': {'type': 'http', 'scheme': 'bearer', 'description': 'honey.id token; role checked against x-roles'}}
+[INFO] Done filtering endpoints by tags in 0.00s
+DEBUG: Type after filter_endpoints_by_tags: <class 'dict'>
+[INFO] Include overrides: {'destructive', 'deprecated'}
+[filter_risky_LLM] No semantic cache and use_llm=False; semantic categories empty.
+[filter_risky_LLM] Total operations found: 26
+[filter_risky_LLM] Semantic category percentages - Authentication: 0.0%, Authorization: 0.0%, Settings: 0.0%
+[filter_risky_LLM] Keeping deprecated operations (user override via --include deprecated)
+[filter_risky_LLM] Keeping destructive operations (user override via --include destructive)
+[filter_risky_LLM] Filtered operations log written to: $CODE/api.support.cafe/rq2_out/filtered_operations.log
+[filter_risky_LLM] Filtered 0 operations
+[filter_risky_LLM] Allowed 26 operations
+[INFO] Done filtering risky endpoints in 0.00s
+DEBUG: Type after filter_risky_endpoints_llm: <class 'dict'>
+[merge_operations] Merge log written to: $CODE/api.support.cafe/rq2_out/merged_operations.log
+[merge_operations] Merged 0 operation groups
+[INFO] Done merging operations in 0.00s
+DEBUG: Type after merge_operations: <class 'dict'>
+DEBUG: About to generate .env file...
+DEBUG: Finished generating .env file in 0.00s.
+DEBUG: About to generate MCP server stub...
+DEBUG: Finished generating MCP server stub in 0.00s.
+[INFO] Generation config saved to: $CODE/api.support.cafe/rq2_out/.automcp_config.json
+MCP server stub generated in $CODE/api.support.cafe/rq2_out
+[INFO] Total time: 0.03s
