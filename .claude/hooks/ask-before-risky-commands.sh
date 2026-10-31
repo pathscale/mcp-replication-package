@@ -25,12 +25,11 @@ set -u
 RISKY_WORDS="aws|gcloud|az|kubectl|helm|terraform|terragrunt|flyctl|fly"
 # -----------------------------------------------------------------------------------
 
-# Pull the command out of the hook's stdin JSON (jq if available, else python3).
-if command -v jq >/dev/null 2>&1; then
-  cmd="$(jq -r '.tool_input.command // ""' 2>/dev/null)"
-else
-  cmd="$(python3 -c 'import sys, json; print(json.load(sys.stdin).get("tool_input", {}).get("command", ""))' 2>/dev/null)"
-fi
+# Pull the command out of the hook's stdin JSON with sed: no jq, no Python, no
+# runtime. The first sed takes the string value of "command"; the second turns
+# the JSON escapes that matter for matching back into characters.
+cmd="$(tr -d '\n' | sed -nE 's/.*"command"[[:space:]]*:[[:space:]]*"(([^"\\]|\\.)*)".*/\1/p' \
+  | sed -E 's/\\[nrt]/ /g; s/\\"/"/g; s/\\\\/\\/g')"
 
 # Couldn't read the command → stay neutral, let normal permission rules decide.
 [ -z "$cmd" ] && exit 0
