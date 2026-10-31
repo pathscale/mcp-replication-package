@@ -26,18 +26,14 @@ rq1/
                          full machine-readable diagnostics — included for
                          the public showcase repo only (see Scrubbing)
 rq2/
-  server_stub.py         Auto-MCP-generated FastMCP server (26 tools) from
-                         api.support.cafe's docs/openapi.yaml. Data, never
-                         run; deleted in the next version. Hashes, checks
-                         and the removal plan: rq2/AUTOMCP-STUB.md
   automcp_tools.json     every generated tool (name, HTTP route, parameters,
-                         description) and the RQ2 check results; replaces
-                         server_stub.py as evidence
-  AUTOMCP-STUB.md        where the stub lives, its SHA-256, how it was
-                         checked, and its removal
+                         description) and the RQ2 check results; the
+                         evidence for the deleted Auto-MCP stub
+  AUTOMCP-STUB.md        the commits that hold the deleted stub, its
+                         SHA-256, how it was checked, and how to recover it
 scripts/
   validate-automcp.ts    Bun script that checks the RQ2 claims against the
-                         stub and writes automcp_tools.json
+                         recovered stub and writes automcp_tools.json
   run.log                complete generator console output, including the
                          skipped Azure-OpenAI stage
   filtered_operations.log, merged_operations.log, .automcp_config.json

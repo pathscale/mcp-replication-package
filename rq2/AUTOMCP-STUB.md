@@ -1,10 +1,10 @@
 # AutoMCP server stub: where it is, how it was checked, and its removal
 
-`rq2/server_stub.py` is the server that AutoMCP generated from
-api.support.cafe's OpenAPI document. It is Python because AutoMCP is a Python
-tool. It is research data. Nothing in this package runs it. It stays only until
-the RQ2 claims are checked, and the next version of this package deletes it.
-Use the hashes below to recover it.
+`rq2/server_stub.py` was the server that AutoMCP generated from
+api.support.cafe's OpenAPI document. It was Python because AutoMCP is a Python
+tool. It was research data, and nothing in this package ran it. It was kept until
+the RQ2 claims were checked, then deleted. `rq2/automcp_tools.json` keeps the
+evidence. Use the hashes below to recover the file.
 
 ## Where the file is
 
@@ -46,20 +46,22 @@ Result on 2026-11-01: all seven checks pass.
 | C6 | The three enumerations (`LogLevel`, `UserRole`, `AppMemberRole`) are not types or constraints in the generated code. Some variant names appear only in description prose. |
 | C7 | Every tool sends plain HTTP to a path-shaped URL that matches its OpenAPI operation. No generated code refers to WebSocket. |
 
-To rerun:
+To rerun, recover the stub first:
 
 ```sh
+git show 82ac7fbcd777299b710c1c7393b05c2fd790b06c:rq2/server_stub.py > server_stub.py
 git -C api.support.cafe fetch origin refs/pull/3/head
 mkdir -p in && git -C api.support.cafe archive 88ef163 config docs/openapi.yaml | tar -x -C in/
-bun scripts/validate-automcp.ts rq2/server_stub.py in/docs/openapi.yaml in/config rq2/automcp_tools.json
+bun scripts/validate-automcp.ts server_stub.py in/docs/openapi.yaml in/config rq2/automcp_tools.json
 ```
 
 ## Removal plan
 
-1. This version adds the validator, `rq2/automcp_tools.json` and this file,
-   and keeps the stub.
-2. The next version deletes `rq2/server_stub.py` from this repository's
+1. Done in `694dcb4`: added the validator, `rq2/automcp_tools.json` and this
+   file, and kept the stub.
+2. Done on 2026-11-01: deleted `rq2/server_stub.py` from this repository's
    `master`. `rq2/automcp_tools.json`, the SHA-256 above and the recovery
-   command take its place.
-3. api.support.cafe deletes `rq2_out/` from its `master`. That directory
-   duplicates `rq2/` here and is not service code.
+   command take its place. `git log -- rq2/server_stub.py` shows the commit.
+3. Done on 2026-11-01: api.support.cafe deleted `rq2_out/` from its `master`.
+   That directory duplicated `rq2/` here and was not service code.
+   `git -C api.support.cafe log -- rq2_out` shows the commit.
