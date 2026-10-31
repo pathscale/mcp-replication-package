@@ -1,5 +1,11 @@
 # MCP Migration Study — Replication Package
 
+This repository is a frozen research artifact for the paper *Correct-by-Construction
+MCP Servers from Declarative Endpoint Definitions* (C. Bergström, arXiv preprint).
+It holds the data and scripts behind the paper's measurements and nothing else. It is not
+maintained software, nothing here runs in production, and it changes only when
+the paper does.
+
 Artifacts backing the RQ1/RQ2 measurements for the endpoint-libs 1.9 MCP
 migration across six PathScale service backends. One archive, pinned to the
 exact commit of every repo measured — see [MANIFEST.json](MANIFEST.json).
