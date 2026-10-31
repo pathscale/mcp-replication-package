@@ -6,44 +6,45 @@
   "repos": {
     "api.support.cafe": {
       "branch": "mcp-support",
-      "sha": "88ef163",
+      "sha": "88ef163086843b22ef7124e7063317f94102ff8c",
       "pr": "https://github.com/pathscale/api.support.cafe/pull/3",
-      "url": "https://github.com/pathscale/api.support.cafe"
+      "url": "https://github.com/pathscale/api.support.cafe",
+      "tag": "mcp-study-2026-07"
     },
     "api.honey.id-backend": {
       "branch": "mcp-support",
-      "sha": "20e06fc",
+      "sha": "20e06fcc5f6b51f281718edd7d55773bde62bed0",
       "pr": "https://github.com/pathscale/api.honey.id-backend/pull/23",
-      "url": "https://github.com/pathscale/api.honey.id-backend"
+      "url": "https://github.com/pathscale/api.honey.id-backend",
+      "tag": "mcp-study-2026-07"
     },
     "auth.honey.id-backend": {
       "branch": "bump-endpoint-libs-1.9",
-      "sha": "798591e",
+      "sha": "798591e755655b52438005e38cea3026c918f204",
       "pr": "https://github.com/pathscale/auth.honey.id-backend/pull/36",
-      "url": "https://github.com/pathscale/auth.honey.id-backend"
+      "url": "https://github.com/pathscale/auth.honey.id-backend",
+      "tag": "mcp-study-2026-07"
     },
     "nofilter.io-backend": {
       "branch": "bump-endpoint-libs-1.9",
-      "sha": "c4efa1e",
+      "sha": "c4efa1e537b1285a7e957a88559b9e90d12e1296",
       "pr": "https://github.com/pathscale/nofilter.io-backend/pull/146",
-      "url": "https://github.com/pathscale/nofilter.io-backend"
-    },
-    "pays.online-backend": {
-      "branch": "bump-endpoint-libs-1.9",
-      "sha": "aa83b36",
-      "pr": "https://github.com/pathscale/pays.online-backend/pull/137",
-      "url": "https://github.com/pathscale/pays.online-backend"
+      "url": "https://github.com/pathscale/nofilter.io-backend",
+      "tag": "mcp-study-2026-07"
     },
     "web3.trading-backend": {
       "branch": "mcp-support",
-      "sha": "525d3d16",
+      "sha": "525d3d16fab2bfdbadcc2e4ba9ade84e7f34e322",
       "pr": "https://github.com/pathscale/web3.trading-backend/pull/118",
-      "url": "https://github.com/pathscale/web3.trading-backend"
+      "url": "https://github.com/pathscale/web3.trading-backend",
+      "tag": "mcp-study-2026-07"
     }
   },
   "instrumentation": {
-    "mcp_verify.sh": "committed in api.support.cafe (mcp-support branch)",
-    "rq1_scan.sh": "committed in api.support.cafe (mcp-support branch)",
+    "mcp_verify.sh": "scripts/mcp_verify.sh: the July measurement run, listing the five services",
+    "rq1_scan.sh": "scripts/rq1_scan.sh: the earlier RQ1-only run, listing the five services",
+    "analyze-rq1.ts": "scripts/analyze-rq1.ts: the paper's RQ1 counts from a verify_out/ folder",
+    "gen-openapi.ts": "scripts/gen-openapi.ts: regenerates rq2/openapi.yaml",
     "generator": "https://github.com/Meriem-611/Auto-MCP (see rq2/run.log for exact invocation and skipped stages)"
   }
 }

@@ -96,32 +96,6 @@
     },
     "loc": "18047"
   },
-  "pays.online-backend": {
-    "clippy": {
-      "errors": 0,
-      "warnings": 825,
-      "top_lints": {
-        "clippy::expect_used": 143,
-        "clippy::unreadable_literal": 86,
-        "clippy::or_fun_call": 62,
-        "clippy::derive_partial_eq_without_eq": 59,
-        "clippy::unwrap_used": 49,
-        "clippy::needless_continue": 48,
-        "clippy::use_self": 46,
-        "clippy::cast_possible_truncation": 30,
-        "clippy::cast_sign_loss": 26,
-        "clippy::needless_pass_by_value": 26
-      }
-    },
-    "cargo_audit": {
-      "vulnerability_count": 0,
-      "advisory_ids": [],
-      "warning_counts_by_kind": {
-        "unmaintained": 3
-      }
-    },
-    "loc": "14626"
-  },
   "web3.trading-backend": {
     "clippy": {
       "errors": 0,

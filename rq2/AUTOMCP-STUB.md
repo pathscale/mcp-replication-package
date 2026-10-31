@@ -50,9 +50,9 @@ To rerun, recover the stub first:
 
 ```sh
 git show 82ac7fbcd777299b710c1c7393b05c2fd790b06c:rq2/server_stub.py > server_stub.py
-git -C api.support.cafe fetch origin refs/pull/3/head
-mkdir -p in && git -C api.support.cafe archive 88ef163 config docs/openapi.yaml | tar -x -C in/
-bun scripts/validate-automcp.ts server_stub.py in/docs/openapi.yaml in/config rq2/automcp_tools.json
+git -C api.support.cafe fetch origin tag mcp-study-2026-07
+mkdir -p in && git -C api.support.cafe archive mcp-study-2026-07 config | tar -x -C in/
+bun scripts/validate-automcp.ts server_stub.py rq2/openapi.yaml in/config rq2/automcp_tools.json
 ```
 
 ## Removal plan
