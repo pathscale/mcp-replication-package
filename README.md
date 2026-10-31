@@ -1,6 +1,6 @@
 # MCP Migration Study — Replication Package
 
-This repository is a frozen research artifact for the paper *No Hand-Written Schemas:
+This repository is a frozen research artifact for the paper *One Source, Two Protocols:
 Generating MCP Servers from Typed Endpoint Definitions* (C. Bergström, arXiv preprint).
 It holds the data and scripts behind the paper's measurements and nothing else. It is not
 maintained software, nothing here runs in production, and it changes only when
@@ -17,7 +17,9 @@ and each of those commits carries the tag `mcp-study-2026-07` in its repository.
 MANIFEST.json            service -> {branch, full commit SHA, tag, migration PR}
 scripts/
   mcp_verify.sh          the July measurement run: regenerate, Clippy,
-                         cargo-audit, LOC and timing for every service
+                         cargo-audit, LOC and timing for every service.
+                         The July run covered six services; this copy's
+                         REPOS list is edited to the five the paper reports
   rq1_scan.sh            the earlier RQ1-only run
   analyze-rq1.ts         the paper's RQ1 counts from one verify_out/ folder
   gen-openapi.ts         regenerates rq2/openapi.yaml from api.support.cafe
