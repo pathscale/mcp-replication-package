@@ -22,6 +22,8 @@ scripts/
                          REPOS list is edited to the five the paper reports
   rq1_scan.sh            the earlier RQ1-only run
   analyze-rq1.ts         the paper's RQ1 counts from one verify_out/ folder
+  describe-conversion.ts reports the parent corpus and conversion diff from
+                         an existing local checkout and a measured commit
   gen-openapi.ts         regenerates rq2/openapi.yaml from api.support.cafe
   validate-automcp.ts    checks the RQ2 claims against the AutoMCP output
 rq1/
@@ -45,6 +47,17 @@ rq2/
   filtered_operations.log, merged_operations.log, .automcp_config.json
 ```
 
+To inspect a conversion without changing its checkout, run
+`bun scripts/describe-conversion.ts <service-checkout> <measured-commit>`
+with the full commit from `MANIFEST.json`. It reports the pre-conversion
+parent's RON groups, endpoint definitions, RON lines, generated and total
+Rust lines, and the conversion's per-file additions and deletions. Counts
+use the legacy text selectors; they count occurrences, not parsed schemas.
+This command requires Bun 1.3.14 or later and Git with `--no-lazy-fetch`.
+All required Git objects must already be local. Each Git command has a
+30-second timeout and a 64-MiB output limit; exceeding either stops the
+report with an error. The report is printed after every Git read succeeds.
+
 ## Reproduction
 
 The scripts need Bun, a Rust toolchain, `endpoint-gen` 1.9.0 or later and
@@ -61,6 +74,8 @@ The scripts need Bun, a Rust toolchain, `endpoint-gen` 1.9.0 or later and
    A finding is a Clippy warning or error whose primary span lies in
    `src/`, counted once per lint, file and line. Findings under
    `src/codegen` count as generated. These are the counts in the paper.
+   The report also prints cargo-audit vulnerabilities and the total number
+   of entries in its warning arrays, counted separately from vulnerabilities.
    `rq1_results.json` instead counts every Clippy message, so a diagnostic
    reported for both the library and its tests appears there twice.
    `bun scripts/analyze-rq1.ts rq1/api.support.cafe` reproduces the

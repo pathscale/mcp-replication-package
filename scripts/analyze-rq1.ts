@@ -27,11 +27,19 @@ export async function analyze(dir: string) {
     if (file.startsWith("src/codegen")) gen++;
   }
   const audit = await Bun.file(`${dir}/audit.json`).json();
+  const warnings = audit.warnings;
+  const auditWarnings = warnings && typeof warnings === "object" && !Array.isArray(warnings)
+    ? Object.values(warnings).reduce<number>(
+        (total, entries) => total + (Array.isArray(entries) ? entries.length : 0),
+        0,
+      )
+    : 0;
   const top = [...lints].sort((a, b) => b[1] - a[1]).slice(0, 5);
   return {
     loc, findings: seen.size, gen, hand: seen.size - gen,
     rate: Number((seen.size / (loc / 1000)).toFixed(2)),
     vulnerabilities: audit.vulnerabilities?.count ?? 0,
+    auditWarnings,
     top,
   };
 }
@@ -41,6 +49,6 @@ if (import.meta.main) {
   if (!dirs.length) { console.error("usage: analyze-rq1.ts <service>/verify_out [...]"); process.exit(2); }
   for (const d of dirs) {
     const r = await analyze(d);
-    console.log(`${d}: kLOC ${(r.loc / 1000).toFixed(1)}, findings ${r.findings}, gen ${r.gen}, hand ${r.hand}, rate ${r.rate}, vulnerabilities ${r.vulnerabilities} | ${r.top.map(([k, v]) => `${k} ${v}`).join(", ")}`);
+    console.log(`${d}: kLOC ${(r.loc / 1000).toFixed(1)}, findings ${r.findings}, gen ${r.gen}, hand ${r.hand}, rate ${r.rate}, vulnerabilities ${r.vulnerabilities}, audit warnings ${r.auditWarnings} | ${r.top.map(([k, v]) => `${k} ${v}`).join(", ")}`);
   }
 }
